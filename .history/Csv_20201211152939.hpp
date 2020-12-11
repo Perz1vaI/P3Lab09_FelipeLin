@@ -16,7 +16,6 @@ public:
     Csv(string file_name)
     {
         this->file_name = file_name;
-        this->header_bool = false;
     }
 
     Csv(string file_name, bool headers)
@@ -25,7 +24,7 @@ public:
         this->header_bool = headers;
     }
 
-    vector<vector<string> > sort_data(int columna, bool up)
+    vector<vector<string>> sort_data(int columna, bool up)
     {
         Csv temporal;
         if (up)
@@ -63,7 +62,6 @@ public:
         {
             vector_temp.push_back(data.at(i).at(index));
         }
-        return vector_temp;
     }
 
     vector<string> get_row(int index)
@@ -144,22 +142,20 @@ public:
     {
         fstream Leer;
         string linea;
-        string archivo = "./";
-        Leer.open(archivo+file_name);
+        Leer.open("./prueba.txt");
         while (!Leer.eof())
         {
             getline(Leer, linea);
             if (linea.size() > 0)
             {
-                for (int i = 0; i < data.size(); i++)
+                for (int i = 0; i < data[0][0].size(); i++)
                 {
-                    for (int j = 0; j < data[0][0].size(); j++)
-                    {
-                        cout << token(linea, ";", j) + " ";
-                    }
-
-                    cout << endl;
+                    /* code */
                 }
+                
+                cout << token(linea, ";", 1) + " " + 
+                token(linea, ";", 2) + " " + 
+                token(linea, ";", 3) + " " << endl;
             }
         }
         Leer.close();
@@ -201,26 +197,17 @@ public:
 
     void load_file(bool headers)
     {
-        if (headers)
+        ifstream cargar;
+        string archivo = "./";
+        cargar.open(archivo + file_name);
+        for (int i = 0; i < data.size(); i++)
         {
-        }
-        else
-        {
-            ifstream cargar;
-            string archivo = "./";
-            cargar.open(archivo + file_name);
-            for (int i = 0; i < data.size(); i++)
+            for (int j = 0; j < data.at(i).size(); j++)
             {
-                            cout << "entra aqui 1 " << endl;
-                for (int j = 0; j < data.at(i).size(); j++)
-                {
-                                cout << "entra aqui 2 " << endl;
-
-                    cargar >> data[i][j];
-                }
+                cargar >> data[i][j];
             }
-            cargar.close();
         }
+        cargar.close();
     }
 
     string get_file_name()
@@ -238,7 +225,7 @@ public:
         return headers;
     }
 
-    vector<vector<string> > get_data()
+    vector<vector<string>> get_data()
     {
         return data;
     }
@@ -251,8 +238,8 @@ public:
 private:
     string file_name;
     vector<string> headers;
-    bool header_bool;
-    vector<vector<string> > data;
+    bool header_bool = false;
+    vector<vector<string>> data;
     int data_count;
 };
 

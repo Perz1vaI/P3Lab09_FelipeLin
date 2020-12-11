@@ -212,10 +212,9 @@ public:
             for (int i = 0; i < data.size(); i++)
             {
                             cout << "entra aqui 1 " << endl;
+
                 for (int j = 0; j < data.at(i).size(); j++)
                 {
-                                cout << "entra aqui 2 " << endl;
-
                     cargar >> data[i][j];
                 }
             }

@@ -16,7 +16,6 @@ public:
     Csv(string file_name)
     {
         this->file_name = file_name;
-        this->header_bool = false;
     }
 
     Csv(string file_name, bool headers)
@@ -25,7 +24,7 @@ public:
         this->header_bool = headers;
     }
 
-    vector<vector<string> > sort_data(int columna, bool up)
+    vector< vector<string> > sort_data(int columna, bool up)
     {
         Csv temporal;
         if (up)
@@ -63,7 +62,6 @@ public:
         {
             vector_temp.push_back(data.at(i).at(index));
         }
-        return vector_temp;
     }
 
     vector<string> get_row(int index)
@@ -144,8 +142,7 @@ public:
     {
         fstream Leer;
         string linea;
-        string archivo = "./";
-        Leer.open(archivo+file_name);
+        Leer.open("./prueba.txt");
         while (!Leer.eof())
         {
             getline(Leer, linea);
@@ -201,25 +198,20 @@ public:
 
     void load_file(bool headers)
     {
-        if (headers)
-        {
-        }
-        else
-        {
-            ifstream cargar;
-            string archivo = "./";
-            cargar.open(archivo + file_name);
-            for (int i = 0; i < data.size(); i++)
-            {
-                            cout << "entra aqui 1 " << endl;
-                for (int j = 0; j < data.at(i).size(); j++)
-                {
-                                cout << "entra aqui 2 " << endl;
+        if(headers){
 
-                    cargar >> data[i][j];
-                }
+        }else{
+            ifstream cargar;
+        string archivo = "./";
+        cargar.open(archivo + file_name);
+        for (int i = 0; i < data.size(); i++)
+        {
+            for (int j = 0; j < data.at(i).size(); j++)
+            {
+                cargar >> data[i][j];
             }
-            cargar.close();
+        }
+        cargar.close();
         }
     }
 
@@ -251,7 +243,7 @@ public:
 private:
     string file_name;
     vector<string> headers;
-    bool header_bool;
+    bool header_bool = false;
     vector<vector<string> > data;
     int data_count;
 };

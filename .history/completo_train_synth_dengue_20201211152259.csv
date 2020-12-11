@@ -1,0 +1,10 @@
+sexo,dias_fiebre,dias_ultima_fiebre,plaquetas,linfocitos,hematocritos,leucocitos,nauseas,vomitos,rash,mialgias,artralgias,prueba_torniquete,dolor_abdominal,acumulacion_fluidos,sangrado_mucosas,hemorragia,shock,letargia,irritabilidad,hepatomegalia,clase
+M,4,1,136688.7492524456,0.4944445537795212,0.47190291831553705,5254.889592877103,Si,NO,Si,Si,Si,Positiva,No,No,No,No,No,No,No,No,Dengue_NoGrave_NoSignos
+M,3,0,246599.69413328666,0.335849066409138,0.4475985654033758,8952.72822962067,No,NO,No,Si,Si,NA,No,No,No,No,No,No,No,No,Dengue_NoGrave_NoSignos
+F,1,2,218856.32391022952,0.26549708540878764,0.3830049392501656,6994.903333173777,Si,Si,No,Si,Si,NA,No,No,No,Si,Si,No,Si,No,No_Dengue
+F,5,0,143238.03601752908,0.4514002265905893,0.41898842291708793,6318.005525947805,No,NO,Si,No,Si,Positiva,Si,Si,Si,Si,No,Si,No,Si,Dengue_Grave
+F,3,0,156329.74939152258,0.4802721629032929,0.45299809982737843,3173.5544647616093,No,NO,No,No,Si,Negativa,No,No,Si,No,No,No,No,No,Dengue_NoGrave_NoSignos
+M,3,0,382763.58834085404,0.35814202964020697,0.4534960011358118,8191.495869656023,No,No,No,No,Si,NA,Si,No,No,No,No,No,No,No,No_Dengue
+M,5,0,125192.60508981958,0.5579110516655318,0.47446355157494985,3116.210222100285,Si,Persistente,No,Si,Si,Positiva,No,No,Si,No,No,No,No,No,Dengue_NoGrave_SignosAlarma
+F,5,0,132818.62245191148,0.4219372938908865,0.402290943028421,5186.70949630135,No,Persistente,Si,Si,Si,NA,Si,No,No,No,No,No,No,No,Dengue_NoGrave_SignosAlarma
+

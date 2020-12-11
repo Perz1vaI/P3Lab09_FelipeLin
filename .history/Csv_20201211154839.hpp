@@ -11,12 +11,12 @@ class Csv
 public:
     Csv()
     {
-    }
+    } 
 
     Csv(string file_name)
     {
         this->file_name = file_name;
-        this->header_bool = false;
+        this->headers_bool = false;
     }
 
     Csv(string file_name, bool headers)
@@ -211,11 +211,8 @@ public:
             cargar.open(archivo + file_name);
             for (int i = 0; i < data.size(); i++)
             {
-                            cout << "entra aqui 1 " << endl;
                 for (int j = 0; j < data.at(i).size(); j++)
                 {
-                                cout << "entra aqui 2 " << endl;
-
                     cargar >> data[i][j];
                 }
             }

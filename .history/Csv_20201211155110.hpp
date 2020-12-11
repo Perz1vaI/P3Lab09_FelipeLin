@@ -211,11 +211,8 @@ public:
             cargar.open(archivo + file_name);
             for (int i = 0; i < data.size(); i++)
             {
-                            cout << "entra aqui 1 " << endl;
                 for (int j = 0; j < data.at(i).size(); j++)
                 {
-                                cout << "entra aqui 2 " << endl;
-
                     cargar >> data[i][j];
                 }
             }
@@ -251,7 +248,7 @@ public:
 private:
     string file_name;
     vector<string> headers;
-    bool header_bool;
+    bool header_bool = false;
     vector<vector<string> > data;
     int data_count;
 };

@@ -16,7 +16,6 @@ public:
     Csv(string file_name)
     {
         this->file_name = file_name;
-        this->header_bool = false;
     }
 
     Csv(string file_name, bool headers)
@@ -63,7 +62,7 @@ public:
         {
             vector_temp.push_back(data.at(i).at(index));
         }
-        return vector_temp;
+        return vector_temp
     }
 
     vector<string> get_row(int index)
@@ -211,11 +210,8 @@ public:
             cargar.open(archivo + file_name);
             for (int i = 0; i < data.size(); i++)
             {
-                            cout << "entra aqui 1 " << endl;
                 for (int j = 0; j < data.at(i).size(); j++)
                 {
-                                cout << "entra aqui 2 " << endl;
-
                     cargar >> data[i][j];
                 }
             }
@@ -251,7 +247,7 @@ public:
 private:
     string file_name;
     vector<string> headers;
-    bool header_bool;
+    bool header_bool = false;
     vector<vector<string> > data;
     int data_count;
 };
