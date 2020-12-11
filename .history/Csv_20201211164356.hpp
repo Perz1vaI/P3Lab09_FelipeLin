@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include <iomanip>
 using namespace std;
 class Csv
 {
@@ -150,13 +149,14 @@ public:
 
         while (!Leer.eof())
         {
+
             getline(Leer, linea);
             if (linea.size() > 0)
             {
 
-                for (int i = 0; i < 23; i++)
+                for (int i = 0; i < 22; i++)
                 {
-                    cout << token(linea, ",", i) << " ";
+                    cout << token(linea, ";", i) << " " << endl;
 
                     
                 }
@@ -180,7 +180,6 @@ public:
 
     Csv concat(Csv file, string file_name)
     {
-
     }
 
     void write_file()
@@ -210,8 +209,11 @@ public:
             ifstream cargar;
             string archivo = "./";
             cargar.open(archivo + file_name, ios::in);
-            if (cargar.is_open()){    
-            while (!cargar.eof()){
+            cout << "entra aqui 0 " << endl;
+            if (cargar.is_open())
+        {    
+            while (!cargar.eof())
+            {
                 //cargar >> data;
             }
         }

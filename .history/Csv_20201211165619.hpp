@@ -156,10 +156,11 @@ public:
 
                 for (int i = 0; i < 23; i++)
                 {
-                    cout << token(linea, ",", i) << " ";
+                    cout << setw(4) << token(linea, ",", i) << " " << setw(4);
 
                     
                 }
+                //cout << endl;
             }
         }
         Leer.close();
@@ -180,7 +181,6 @@ public:
 
     Csv concat(Csv file, string file_name)
     {
-
     }
 
     void write_file()
@@ -210,8 +210,10 @@ public:
             ifstream cargar;
             string archivo = "./";
             cargar.open(archivo + file_name, ios::in);
-            if (cargar.is_open()){    
-            while (!cargar.eof()){
+            if (cargar.is_open())
+        {    
+            while (!cargar.eof())
+            {
                 //cargar >> data;
             }
         }

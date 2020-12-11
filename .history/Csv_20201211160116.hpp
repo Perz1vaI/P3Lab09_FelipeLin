@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include <iomanip>
 using namespace std;
 class Csv
 {
@@ -146,19 +145,25 @@ public:
         fstream Leer;
         string linea;
         string archivo = "./";
-        Leer.open(archivo + file_name);
+        Leer.open(archivo+file_name);
+                                                cout << "entra aqui 0 " << endl;
 
         while (!Leer.eof())
-        {
+        {                                           cout << "entra aqui 1 " << endl;
+
             getline(Leer, linea);
             if (linea.size() > 0)
             {
+                                                        cout << "entra aqui 2 " << endl;
 
-                for (int i = 0; i < 23; i++)
+                for (int i = 0; i < data.size(); i++)
                 {
-                    cout << token(linea, ",", i) << " ";
+                    for (int j = 0; j < data[0][0].size(); j++)
+                    {
+                        cout << token(linea, ";", j) + " ";
+                    }
 
-                    
+                    cout << endl;
                 }
             }
         }
@@ -180,7 +185,6 @@ public:
 
     Csv concat(Csv file, string file_name)
     {
-
     }
 
     void write_file()
@@ -209,12 +213,18 @@ public:
         {
             ifstream cargar;
             string archivo = "./";
-            cargar.open(archivo + file_name, ios::in);
-            if (cargar.is_open()){    
-            while (!cargar.eof()){
-                //cargar >> data;
+            cargar.open(archivo + file_name);
+                                        cout << "entra aqui 0 " << endl;
+            for (int i = 0; i < data.size(); i++)
+            {
+                            cout << "entra aqui 1 " << endl;
+                for (int j = 0; j < data.at(i).size(); j++)
+                {
+                                cout << "entra aqui 2 " << endl;
+
+                    cargar >> data[i][j];
+                }
             }
-        }
             cargar.close();
         }
     }
