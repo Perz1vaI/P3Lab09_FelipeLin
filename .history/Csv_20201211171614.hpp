@@ -176,9 +176,8 @@ public:
         }
     }
 
-    void concat(Csv file, string file_name)
+    Csv concat(Csv file, string file_name)
     {
-        // no pude hacerlo
     }
 
     void write_file()
@@ -200,8 +199,8 @@ public:
 
     void load_file(bool headers)
     {
-        string line,line2;
-        int cont_i=0,cont_j=0;
+        int cont=0;
+        string line;
         if (headers)
         {
         }
@@ -212,16 +211,17 @@ public:
             cargar.open(archivo + file_name, ios::in);
             if (cargar.is_open())
             {
+                                        cout << "holaa 1";
 
                 while (!cargar.eof())
                 {
+                                            cout << "holaa 2";
+
                     cargar >> line;
-                    for (int i = 0; i < line.size(); i++)
-                    {
-                        line2 = token(line, ",", i);
-                        // no funciona load file
-                         
-                    }
+                    
+                        data[cont].push_back(line);
+                        cont++;
+                    
                 }
             }
             cargar.close();

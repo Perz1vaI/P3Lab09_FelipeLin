@@ -157,6 +157,8 @@ public:
                 for (int i = 0; i < 23; i++)
                 {
                     cout << token(linea, ",", i) << " ";
+
+                    
                 }
             }
         }
@@ -176,9 +178,9 @@ public:
         }
     }
 
-    void concat(Csv file, string file_name)
+    Csv concat(Csv file, string file_name)
     {
-        // no pude hacerlo
+
     }
 
     void write_file()
@@ -200,8 +202,7 @@ public:
 
     void load_file(bool headers)
     {
-        string line,line2;
-        int cont_i=0,cont_j=0;
+        string line;
         if (headers)
         {
         }
@@ -210,20 +211,16 @@ public:
             ifstream cargar;
             string archivo = "./";
             cargar.open(archivo + file_name, ios::in);
-            if (cargar.is_open())
-            {
-
-                while (!cargar.eof())
+            if (cargar.is_open()){    
+            while (!cargar.eof()){
+                cargar >> line;
+                for (int i = 0; i < data.size(); i++)
                 {
-                    cargar >> line;
-                    for (int i = 0; i < line.size(); i++)
-                    {
-                        line2 = token(line, ",", i);
-                        // no funciona load file
-                         
-                    }
+                    data[i].push_back(line);
                 }
+                
             }
+        }
             cargar.close();
         }
     }

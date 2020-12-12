@@ -219,8 +219,13 @@ public:
                     for (int i = 0; i < line.size(); i++)
                     {
                         line2 = token(line, ",", i);
-                        // no funciona load file
+                        char c[line2.size()+1];
+                        strcpy(c,line2.c_str());
+                        data[cont_i][cont_j].push_back(line2);
                          
+                        cont_i++; 
+                        cont_j++;
+                        
                     }
                 }
             }

@@ -219,8 +219,12 @@ public:
                     for (int i = 0; i < line.size(); i++)
                     {
                         line2 = token(line, ",", i);
-                        // no funciona load file
+                        
+                         data[cont_i][cont_j].push_back((char)line2);
                          
+                         cont_i++; 
+                         cont_j++;
+                        
                     }
                 }
             }

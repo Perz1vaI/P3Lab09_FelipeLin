@@ -176,9 +176,8 @@ public:
         }
     }
 
-    void concat(Csv file, string file_name)
+    Csv concat(Csv file, string file_name)
     {
-        // no pude hacerlo
     }
 
     void write_file()
@@ -201,7 +200,6 @@ public:
     void load_file(bool headers)
     {
         string line,line2;
-        int cont_i=0,cont_j=0;
         if (headers)
         {
         }
@@ -218,9 +216,17 @@ public:
                     cargar >> line;
                     for (int i = 0; i < line.size(); i++)
                     {
+
                         line2 = token(line, ",", i);
-                        // no funciona load file
-                         
+                        for (int i = 0; i < 20; i++)
+                        {
+                            for (int j = 0; j < 23; j++)
+                            {
+                                data[i][j] = line2;
+                            }
+                            
+                        }
+                        
                     }
                 }
             }

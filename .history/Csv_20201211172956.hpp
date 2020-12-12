@@ -26,7 +26,7 @@ public:
         this->header_bool = headers;
     }
 
-    vector<vector<string> > sort_data(int columna, bool up)
+    vector<vector<string>> sort_data(int columna, bool up)
     {
         Csv temporal;
         if (up)
@@ -176,9 +176,8 @@ public:
         }
     }
 
-    void concat(Csv file, string file_name)
+    Csv concat(Csv file, string file_name)
     {
-        // no pude hacerlo
     }
 
     void write_file()
@@ -200,8 +199,7 @@ public:
 
     void load_file(bool headers)
     {
-        string line,line2;
-        int cont_i=0,cont_j=0;
+        string line;
         if (headers)
         {
         }
@@ -215,12 +213,13 @@ public:
 
                 while (!cargar.eof())
                 {
+                    string line2;
                     cargar >> line;
                     for (int i = 0; i < line.size(); i++)
                     {
+
                         line2 = token(line, ",", i);
-                        // no funciona load file
-                         
+                        cout << line2 << endl;
                     }
                 }
             }

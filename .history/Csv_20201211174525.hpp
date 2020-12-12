@@ -176,9 +176,8 @@ public:
         }
     }
 
-    void concat(Csv file, string file_name)
+    Csv concat(Csv file, string file_name)
     {
-        // no pude hacerlo
     }
 
     void write_file()
@@ -218,9 +217,13 @@ public:
                     cargar >> line;
                     for (int i = 0; i < line.size(); i++)
                     {
-                        line2 = token(line, ",", i);
-                        // no funciona load file
+                        
+                        
+                         data[cont_i][cont_j].push_back(token(line, ",", i));
                          
+                         cont_i++; 
+                         cont_j++;
+                        
                     }
                 }
             }
